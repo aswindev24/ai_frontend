@@ -28,7 +28,7 @@ const Chat = () => {
     const fetchHistory = async () => {
         try {
             const token = localStorage.getItem('token');
-            const res = await axios.get('http://localhost:5000/api/chat/history', {
+            const res = await axios.get('https://ai-backend-637t.onrender.com/api/chat/history', {
                 headers: { Authorization: `Bearer ${token}` }
             });
             setHistory(res.data);
@@ -48,7 +48,7 @@ const Chat = () => {
 
         try {
             const token = localStorage.getItem('token');
-            const res = await axios.post('http://localhost:5000/api/chat/review', {
+            const res = await axios.post('http://ai-backend-637t.onrender.com/api/chat/review', {
                 code: input,
                 language: 'javascript' // Auto-detect or dropdown later
             }, {

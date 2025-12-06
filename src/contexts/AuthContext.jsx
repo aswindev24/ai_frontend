@@ -20,7 +20,7 @@ export const AuthProvider = ({ children }) => {
             const storedToken = localStorage.getItem('token');
             if (storedToken) {
                 try {
-                    const res = await axios.get('http://localhost:5000/api/auth/me', {
+                    const res = await axios.get('https://ai-backend-637t.onrender.com/api/auth/me', {
                         headers: { Authorization: `Bearer ${storedToken}` }
                     });
                     setUser(res.data.user);
@@ -36,7 +36,7 @@ export const AuthProvider = ({ children }) => {
     }, []);
 
     const login = () => {
-        window.location.href = 'http://localhost:5000/api/auth/google';
+        window.location.href = 'http://ai-backend-637t.onrender.com/api/auth/google';
     };
 
     const logout = () => {
@@ -44,7 +44,7 @@ export const AuthProvider = ({ children }) => {
         setUser(null);
         try {
             // Optional: Notify backend (fire and forget)
-            axios.get('http://localhost:5000/api/auth/logout').catch(err => console.error('Backend logout error', err));
+            axios.get('https://ai-backend-637t.onrender.com/api/auth/logout').catch(err => console.error('Backend logout error', err));
         } catch (error) {
             console.error('Logout error', error);
         }
