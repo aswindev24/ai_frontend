@@ -2,7 +2,7 @@
   "name": "codereview-frontend",
   "version": "1.0.0",
   "private": true,
-  "homepage": "https://aswindev24.github.io/codereview-frontend",
+  "homepage": "https://aswindev24.github.io/ai_frontend",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
